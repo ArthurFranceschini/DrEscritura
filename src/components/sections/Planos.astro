@@ -1,0 +1,108 @@
+---
+import Card from "../ui/Card.astro";
+import Section from "./Section.astro";
+import SectionTitle from "../ui/SectionTitle.astro";
+
+const plans = [
+  {
+    title: "SMART",
+    price: "CONSULTE",
+    roi: "4 meses",
+    margin: "40% em média",
+    features: [
+      "Modelo de negócio comprovado",
+      "Marca forte e respeitada", 
+      "Treinamentos",
+      "Suporte Técnico e Marketing",
+      "Associado ABF",
+      "Trabalhe do seu jeito: Home Office ou Coworking"
+    ],
+    highlight: false
+  },
+  {
+    title: "FULL",
+    price: "CONSULTE",
+    roi: "12 a 18 meses",
+    margin: "40% em média",
+    features: [
+      "Modelo de negócio comprovado",
+      "Marca forte e respeitada",
+      "Treinamentos", 
+      "Suporte Técnico, Jurídico e Marketing",
+      "Associado ABF",
+      "Ponto comercial",
+      "Projeto arquitetônico"
+    ],
+    highlight: true
+  }
+];
+
+const description = "Escolha o modelo de franquia que mais combina com seu perfil e objetivos";
+---
+
+<Section id="Planos">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-3">
+    <SectionTitle sectionTitle="Nossos Planos" description={description} />
+    
+    <div class="space-y-8 lg:grid lg:grid-cols-2 sm:gap-6 xl:gap-10 lg:space-y-0 mt-12">
+      {plans.map((plan) => (
+        <Card isUnderline={true}>
+         <div 
+    class={`flex flex-col text-center rounded-[45px] overflow-hidden h-full 
+      ${plan.highlight ? 'bg-green text-black' : 'bg-gray text-black'} p-8`}
+  >
+            <h3 class="mb-4 text-3xl font-bold">{plan.title}</h3>
+            
+            <div class="flex justify-center items-baseline my-6">
+              <span class="text-4xl font-extrabold">{plan.price}</span>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4 mb-8 pb-8 border-b border-gray-300">
+              <div class="text-left">
+                <p class="text-sm opacity-80">Retorno do Investimento</p>
+                <p class="font-semibold text-lg">{plan.roi}</p>
+              </div>
+              <div class="text-left">
+                <p class="text-sm opacity-80">Margem de Lucro</p>
+                <p class="font-semibold text-lg">{plan.margin}</p>
+              </div>
+            </div>
+            
+            <ul role="list" class="mb-8 space-y-4 text-left">
+              {plan.features.map((feature) => (
+                <li class="flex items-start space-x-3">
+                  <svg 
+                    class={`flex-shrink-0 w-5 h-5 mt-0.5 ${plan.highlight ? 'text-black' : 'text-green'}`} 
+                    fill="currentColor" 
+                    viewBox="0 0 20 20" 
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path 
+                      fill-rule="evenodd" 
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" 
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+            
+            <div class="mt-auto pt-4">
+              <a 
+                href="#contato" 
+                class={`font-medium rounded-lg text-sm px-8 py-3 w-full block transition-colors ${
+                  plan.highlight 
+                    ? 'bg-white text-black hover:bg-dark hover:text-white' 
+                    : 'bg-green text-black hover:bg-dark hover:text-white'
+                }`}
+              >
+                Quero saber mais
+              </a>
+            </div>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </div>
+</Section>

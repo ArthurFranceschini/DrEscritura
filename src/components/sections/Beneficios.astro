@@ -1,0 +1,70 @@
+---
+import SectionTitle from "../ui/SectionTitle.astro";
+import ServiceCard from "../ui/ServiceCard.astro";
+import Section from "./Section.astro";
+
+import c1 from "../../assets/pics/card-pic1.png";
+const cards = [
+  {
+    index: 1,
+    titleTop: "Modelo de negócio",
+    titleBottom: "comprovado",
+    description: "Inicie sua jornada empreendedora com um plano de negócios já testado e validado, reduzindo riscos e incertezas.",
+    img: c1,
+    alt: "Modelo de negócio comprovado",
+    link: "#",
+  },
+  {
+    index: 2,
+    titleTop: "Marca forte",
+    titleBottom: "e respeitada",
+    description: "Associe-se a uma marca reconhecida e admirada no mercado, o que facilitará a atração de clientes e a credibilidade do seu negócio.",
+    img: c1,
+    alt: "Marca forte e respeitada",
+    link: "#",
+  },
+  {
+    index: 3,
+    titleTop: "Treinamentos",
+    titleBottom: "",
+    description: "Receba capacitação completa e contínua para você e sua equipe, garantindo excelência na prestação de serviços e gestão do negócio.",
+    img: c1,
+    alt: "Treinamentos",
+    link: "#",
+  },
+  {
+    index: 4,
+    titleTop: "Suporte",
+    titleBottom: "",
+    description: "Contamos com uma equipe dedicada para oferecer assistência constante em áreas técnicas, jurídicas e de marketing, para que você possa focar no crescimento do seu negócio.",
+    img: c1,
+    alt: "Suporte",
+    link: "#",
+  },
+];
+
+const description =
+  "Entenda os Benefícios em ser um Franqueado Dr. Escritura";
+---
+
+<Section id="Beneficios">
+  <div class="mt-[140px] mb-5">
+    <SectionTitle sectionTitle="Benefícios" description={description} />
+    <div class="grid lg:grid-cols-2 gap-10">
+      {
+        cards.map((card) => (
+          <ServiceCard
+            index={card.index}
+            titleTop={card.titleTop}
+            titleBottom={card.titleBottom}
+            description={card.description}
+            img={card.img}
+            alt={card.alt}
+            link={card.link}
+            showButtonText={false}
+          />
+        ))
+      }
+    </div>
+  </div>
+</Section>

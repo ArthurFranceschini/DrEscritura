@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+import Card from "../ui/Card.astro";
+import Section from "./Section.astro";
+
+import propImg from "../../assets/pics/proposal-pic.png";
+---
+
+<Section>
+  <Card>
+    <div
+      class="flex flex-col md:flex-row bg-[#F3F3F3] rounded-[45px] p-8 md:p-[60px] gap-8 md:gap-12 items-center mt-[123px] mb-[163px]"
+    >
+      <div class="w-full md:w-1/2 flex flex-col gap-[26px]">
+        <h2 class="text-3xl font-medium">Confira nossos cursos!</h2>
+        <p>
+Descubra como a carreira de regularizador de imóveis pode transformar sua trajetória profissional, oferecendo um modelo de atuação comprovado e suporte completo para que você atue com segurança, eficiência e resultados consistentes no mercado imobiliário.        </p>
+        <button class="btn-primary">Conferir</button>
+      </div>
+      <picture
+        class="w-full md:w-1/2 flex items-center justify-center"
+      >
+        <Image
+          src={propImg}
+          alt="This is an image"
+          class="w-full h-auto object-contain"
+        />
+      </picture>
+    </div>
+  </Card>
+</Section>

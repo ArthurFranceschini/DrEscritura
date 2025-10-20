@@ -1,0 +1,32 @@
+---
+import { Image } from "astro:assets";
+import Logoabf from "../../assets/company/LogoAbf.svg";
+import Section from "./Section.astro";
+---
+
+<Section id="Abf">
+  <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+    <div class="flex-shrink-0">
+      <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+        <Image 
+          src={Logoabf} 
+          class="h-20 md:h-24 w-auto mx-auto" 
+          alt="Logo Associação Brasileira de Franchising" 
+          loading="lazy" 
+        />
+      </div>
+    </div>
+    
+    <div class="flex-1 text-center md:text-left">
+      <p class="text-gray-700 leading-relaxed">
+        A Dr. Escritura é um membro orgulhoso da Associação Brasileira de 
+        Franchising (ABF), um reconhecimento que reafirma nosso compromisso 
+        com a qualidade, a ética e a transparência em nossas operações de 
+        franchising. Este status nos coloca em uma categoria distinta e 
+        altamente respeitada no universo do franchising, proporcionando aos 
+        nossos franqueados a confiança e a segurança de que estão investindo 
+        em uma empresa que está alinhada com os mais altos padrões do setor.
+      </p>
+    </div>
+  </div>
+</Section>
