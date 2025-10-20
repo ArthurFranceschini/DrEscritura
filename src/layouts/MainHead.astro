@@ -1,7 +1,6 @@
 ---
 import Seo from "../components/seo/Seo.astro";
 
-// Pass the contents to create SEO for the page
 const { title, description, image, frontmatter, robots } = Astro.props;
 ---
 
@@ -9,9 +8,7 @@ const { title, description, image, frontmatter, robots } = Astro.props;
   <meta charset="utf-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-  <!-- iOS 
-  <link rel="apple-touch-icon" sizes="256x256" href="/path/to/your/icon.png" />
-  -->
+
   <meta name="viewport" content="width=device-width" />
   <meta name="generator" content={Astro.generator} />
 
@@ -27,5 +24,10 @@ const { title, description, image, frontmatter, robots } = Astro.props;
     {robots}
   />
 
-  <!-- Preconnect fonts, images... -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" 
+    rel="stylesheet" 
+  />
 </head>
