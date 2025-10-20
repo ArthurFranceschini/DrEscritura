@@ -2,28 +2,44 @@
 import Section from "./Section.astro";
 import { Image } from "astro:assets";
 import HeroIlust from "../../assets/pics/hero.svg";
+import BgImage from "../../assets/pics/hero-bg.jpg";
 ---
 
-<Section id="home" class="py-20 md:py-32 lg:py-40">
-<div class="relative grid grid-cols-1 md:grid-cols-2 md:gap-12 lg:gap-16 gap-8 items-start" id="hero">
-    <div class="py-8 md:py-12 md:pb-20 md:pt-10">
-        <div class="text-left space-y-3">
-            <h1 class="text-4xl font-medium leading-none md:text-6xl text-center md:text-left">Pronto para dar o próximo passo rumo ao sucesso no empreendedorismo?</h1>
-            <p class="mt-6 mb-8 text-lg font-normal leading-7 sm:mb-12 text-center md:text-left md:pr-12">Se você tem um espírito empreendedor e está ansioso para investir na área de maior potencial de crescimento no Brasil, nós temos uma excelente oportunidade que pode transformar seu sonho em realidade.</p>
-            <div class="w-full justify-center md:justify-start items-center inline-flex">
-                <a href="https://github.com/ArthurFranceschini" target="_blank" class="btn-primary text-xl font-normal leading-7">
-  Quero ser um franqueado
-</a>
-            </div>
+<Section id="home" class="py-20 md:py-32 lg:py-40 relative">
+  <!-- Background Image -->
+  <div class="absolute inset-0 z-0">
+    <Image 
+      src={BgImage} 
+      alt="Background" 
+      class="w-full h-full object-cover opacity-35"
+      loading="eager"
+    />
+  </div>
+
+  <!-- Conteúdo -->
+  <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 md:gap-12 lg:gap-16 gap-8 items-stretch" id="hero">
+    <div class="flex items-center">
+      <div class="text-left space-y-4 bg-white rounded-3xl p-8 md:p-12 lg:p-14 shadow-lg w-full h-full flex flex-col justify-center">
+        <h1 class="font-medium leading-tight text-center md:text-left text-black">
+          Pronto para dar o próximo passo rumo ao sucesso no <span class="whitespace-nowrap">empreendedorismo?</span>
+        </h1>
+        <p class="mt-6 mb-8 font-normal leading-relaxed sm:mb-12 text-center md:text-left text-black">
+          Se você tem um espírito empreendedor e está ansioso para investir na área de maior potencial de crescimento no Brasil, nós temos uma excelente oportunidade que pode transformar seu sonho em realidade.
+        </p>
+        <div class="w-full justify-center md:justify-start items-center flex pt-4">
+          <a href="https://github.com/ArthurFranceschini" target="_blank" class="btn-primary font-normal leading-7 whitespace-nowrap">
+            Quero ser um franqueado
+          </a>
         </div>
+      </div>
     </div>
-    <div class="py-8 md:py-12 md:pb-20 md:pt-10 order-first md:order-last">
-        <Image 
-  src={HeroIlust} 
-  alt="Hero Ilustration" 
-  loading="eager" 
-  class="rounded-2xl w-full"
-/>
+    <div class="flex items-center order-first md:order-last">
+      <Image 
+        src={HeroIlust} 
+        alt="Hero Ilustration" 
+        loading="eager" 
+        class="rounded-3xl w-full h-full object-cover shadow-lg"
+      />
     </div>
-</div>
+  </div>
 </Section>

@@ -19,25 +19,54 @@
     --gray: #f3f3f3;
     --white: #ffffff;
   }
+
+  /* Tamanhos de fonte base */
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    @apply text-[16px] lg:text-[18px] font-regular;
+  }
+
+  h1 {
+    @apply text-[32px] lg:text-[48px] font-medium leading-tight;
+  }
+
+  h2 {
+    @apply text-[24px] lg:text-[32px] font-medium leading-tight;
+  }
+
+  h3 {
+    @apply text-[20px] lg:text-[24px] font-medium leading-tight;
+  }
+
+  h4 {
+    @apply text-[18px] lg:text-[20px] font-medium leading-tight;
+  }
+
+  p {
+    @apply text-[16px] lg:text-[22px] font-regular leading-relaxed;
+  }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-green text-black rounded-lg px-[35px] py-5 transition-all duration-200;
+    @apply bg-green text-black rounded-lg px-[35px] py-5 text-[16px] lg:text-[18px] transition-all duration-200;
   }
   .btn-primary:hover {
     @apply bg-dark text-white transform scale-105;
   }
 
   .btn-secondary {
-    @apply bg-transparent text-black px-[35px] py-5 rounded-lg border border-solid border-black transition-all duration-200;
+    @apply bg-transparent text-black px-[35px] py-5 rounded-lg border border-solid border-black text-[16px] lg:text-[18px] transition-all duration-200;
   }
   .btn-secondary:hover {
     @apply bg-black text-white border-green transform scale-105;
   }
 
   .btn-tertiary {
-    @apply bg-green text-black rounded-lg px-[35px] py-5 transition-all duration-200;
+    @apply bg-green text-black rounded-lg px-[35px] py-5 text-[16px] lg:text-[18px] transition-all duration-200;
   }
   .btn-tertiary:hover {
     @apply bg-white text-black transform scale-105;
@@ -75,12 +104,13 @@
 
 /* markdown style */
 .content p {
-  margin: 20px 0;
-  font-size: 1.1rem;
+  @apply my-5 text-[16px] lg:text-[22px];
 }
 
 .content h2 {
-  margin: 20px 0;
-  font-size: 1.4rem;
-  font-weight: bold;
+  @apply my-5 text-[24px] lg:text-[32px] font-semibold;
+}
+
+.content h3 {
+  @apply my-4 text-[20px] lg:text-[24px] font-semibold;
 }

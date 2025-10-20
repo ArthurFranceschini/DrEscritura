@@ -17,6 +17,7 @@ const cards = [
     img: c1,
     alt: "Modelo de negócio comprovado",
     link: "#",
+    noWrap: true, 
   },
   {
     index: 2,
@@ -52,23 +53,22 @@ const description =
 ---
 
 <Section id="Beneficios">
-  <div class="mt-[140px] mb-5">
-    <SectionTitle sectionTitle="Benefícios" description={description} />
-    <div class="grid lg:grid-cols-2 gap-10">
-      {
-        cards.map((card) => (
-          <ServiceCard
-            index={card.index}
-            titleTop={card.titleTop}
-            titleBottom={card.titleBottom}
-            description={card.description}
-            img={card.img}
-            alt={card.alt}
-            link={card.link}
-            showButtonText={false}
-          />
-        ))
-      }
-    </div>
+  <SectionTitle sectionTitle="Benefícios" description={description} />
+  <div class="grid lg:grid-cols-2 gap-10 mt-8">
+    {
+      cards.map((card) => (
+        <ServiceCard
+          index={card.index} 
+          titleTop={card.titleTop}
+          titleBottom={card.titleBottom}
+          description={card.description}
+          img={card.img}
+          alt={card.alt}
+          link={card.link}
+          showButtonText={false}
+          noWrap={card.noWrap}
+        />
+      ))
+    }
   </div>
 </Section>
