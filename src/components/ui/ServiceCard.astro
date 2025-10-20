@@ -2,43 +2,31 @@
 import { Image } from "astro:assets";
 import Card from "./Card.astro";
 
-import gob from "../../assets/icon6.svg";
-
-const { index, titleTop, titleBottom, description, img, alt, link } = Astro.props;
+const { titleTop, titleBottom, description, img, alt } = Astro.props;
 ---
 
-<Card isUnderline={true}>
+<Card isUnderline={true} class="bg-green rounded-[45px]">
   <div
-    class="h-[300px] w-full sm:h-full lg:gap-[60px] grid custom-grid lg:grid-cols-2 lg:grid-rows-1 p-8 sm:p-[50px] rounded-[45px] bg-green"
+    class="w-full rounded-[45px] p-8 sm:p-[50px] grid lg:grid-cols-2 lg:gap-[60px] gap-8 items-center"
   >
-    <div class="flex flex-col gap-4 col-span-2 lg:col-span-1">
+    <div class="flex flex-col gap-4">
       <h3 class="flex flex-col">
-        <span class="w-[fit-content] whitehead">{titleTop}</span>
-        <span class="w-[fit-content] whitehead">{titleBottom}</span>
+        <span class="whitehead w-fit">{titleTop}</span>
+        <span class="whitehead w-fit">{titleBottom}</span>
       </h3>
       <p class="text-white/90 text-sm lg:text-base">
         {description}
       </p>
     </div>
+
     <picture
-      class="w-full h-full row-span-1 order-1 lg:order-none lg:row-span-2 flex justify-center items-center"
+      class="flex justify-start items-center w-[70%] sm:w-[60%] lg:w-full"
     >
       <Image
         src={img}
         alt={alt}
-        class="h-full w-auto object-cover rounded-2xl"
+        class="w-full h-auto object-cover rounded-2xl"
       />
     </picture>
-    <div class="flex items-end col-span-2 lg:col-span-1">
-      <a href={link} class="flex items-center">
-        <Image src={gob} alt={alt} />
-      </a>
-    </div>
   </div>
 </Card>
-
-<style>
-  .custom-grid {
-    grid-template: auto auto;
-  }
-</style>
