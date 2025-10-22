@@ -1,5 +1,4 @@
 ---
-
 import MainLayout from "../layouts/MainLayout.astro";
 import HeroCourse from "@/components/sections/HeroCourse.astro";
 import InfoCourse from "@/components/sections/InfoCourse.astro";
@@ -10,18 +9,18 @@ import History from "@/components/sections/History.astro";
 import Urgency from '@/components/sections/Urgency.astro';
 import Bonus from '@/components/sections/Bonus.astro';
 import NovaVida from '@/components/sections/NovaVida.astro';
-
-
 ---
+
 <MainLayout
-    title="Curso Regularizador de Imóveis"
+  hideNavbar={true}
+  title="Curso Regularizador de Imóveis"
   description="Um curso Dr Escritura">
-<HeroCourse/>
-<History/>
-<PropostaCourse/> 
-<InfoCourse/>
-<Urgency/>
-<PlanoCourse/>
-<Bonus/>
-<NovaVida/>
-<FAQCourse/>
+  <HeroCourse/>
+  <History/>
+  <PropostaCourse/> 
+  <InfoCourse/>
+  <Urgency/>
+  <PlanoCourse/>
+  <NovaVida/>
+  <FAQCourse/>
+</MainLayout>

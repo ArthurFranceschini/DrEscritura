@@ -1,6 +1,6 @@
 ---
 import Section from "./Section.astro";
-import { Check } from "lucide-astro";
+import { Check, Gift } from "lucide-astro";
 ---
 
 <Section id="PlanoCourse" class="px-5 py-12 md:py-16 lg:py-20">
@@ -95,6 +95,106 @@ import { Check } from "lucide-astro";
           </div>
           
         </div>
+        
+        <!-- Espaço 64px -->
+        <div class="mt-16"></div>
+        
+        <!-- Divisor -->
+        <div class="w-full h-[2px] bg-white opacity-20"></div>
+        
+        <!-- Espaço 32px -->
+        <div class="mt-8"></div>
+        
+        <!-- Seção de Bônus -->
+        <!-- Título com ícone -->
+        <div class="flex items-center justify-center lg:justify-start gap-3">
+          <Gift size={32} class="flex-shrink-0" />
+          <p class="text-[20px] lg:text-[32px] font-semibold">
+            BÔNUS EXCLUSIVOS PARA QUEM AGIR HOJE:
+          </p>
+        </div>
+        
+        <!-- Espaço 32px -->
+        <div class="mt-8"></div>
+        
+        <!-- Lista de bônus em grid de 2 colunas no desktop -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-left">
+          
+          <!-- BÔNUS #1 -->
+          <div class="flex items-start gap-3">
+            <Check size={20} class="flex-shrink-0 mt-1" />
+            <div>
+              <p class="text-[14px] lg:text-[20px] font-semibold">
+                BÔNUS #1: Kit completo de documentos e contratos
+              </p>
+              <p class="text-[12px] lg:text-[16px] font-regular mt-1">
+                (Valor: R$ 497)
+              </p>
+            </div>
+          </div>
+          
+          <!-- BÔNUS #2 -->
+          <div class="flex items-start gap-3">
+            <Check size={20} class="flex-shrink-0 mt-1" />
+            <div>
+              <p class="text-[14px] lg:text-[20px] font-semibold">
+                BÔNUS #2: Masterclass "Primeiros R$ 5.000 em 30 dias"
+              </p>
+              <p class="text-[12px] lg:text-[16px] font-regular mt-1">
+                (Valor: R$ 297)
+              </p>
+            </div>
+          </div>
+          
+          <!-- BÔNUS #3 -->
+          <div class="flex items-start gap-3">
+            <Check size={20} class="flex-shrink-0 mt-1" />
+            <div>
+              <p class="text-[14px] lg:text-[20px] font-semibold">
+                BÔNUS #3: [Nome do Bônus]
+              </p>
+              <p class="text-[12px] lg:text-[16px] font-regular mt-1">
+                (Valor: R$ 197)
+              </p>
+            </div>
+          </div>
+          
+          <!-- BÔNUS #4 -->
+          <div class="flex items-start gap-3">
+            <Check size={20} class="flex-shrink-0 mt-1" />
+            <div>
+              <p class="text-[14px] lg:text-[20px] font-semibold">
+                BÔNUS #4: Certificado de conclusão
+              </p>
+              <p class="text-[12px] lg:text-[16px] font-regular mt-1">
+                (Valor: R$ 97)
+              </p>
+            </div>
+          </div>
+          
+        </div>
+        
+        <!-- Espaço 32px -->
+        <div class="mt-8"></div>
+        
+        <!-- Divisor -->
+        <div class="w-full h-[2px] bg-white opacity-20"></div>
+        
+        <!-- Espaço 16px -->
+        <div class="mt-4"></div>
+        
+        <!-- Valor total dos bônus -->
+        <div class="text-center lg:text-left">
+          <p class="text-[16px] lg:text-[24px] font-regular">
+            VALOR TOTAL DOS BÔNUS:
+          </p>
+          <p class="text-[28px] lg:text-[40px] font-semibold mt-2">
+            R$ 1.088
+          </p>
+        </div>
+        
+        <!-- Espaço 32px -->
+        <div class="mt-8"></div>
         
       </div>
       

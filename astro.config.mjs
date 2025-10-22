@@ -1,10 +1,6 @@
 import { defineConfig } from 'astro/config';
-
 import tailwind from "@astrojs/tailwind";
-
-// Import the Vercel adapter
 import vercel from '@astrojs/vercel';
-
 import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
@@ -13,4 +9,10 @@ export default defineConfig({
   integrations: [tailwind(), sitemap()],
   output: 'server',
   adapter: vercel(),
+
+  vite: {
+    server: {
+      allowedHosts: ['.ngrok-free.app'], 
+    },
+  },
 });
