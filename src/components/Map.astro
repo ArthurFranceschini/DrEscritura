@@ -1,0 +1,85 @@
+---
+// @ts-nocheck
+---
+
+<div id="map" class="w-full h-full"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    document.head.appendChild(script);
+
+    script.onload = () => {
+      // @ts-ignore
+      const L = window.L;
+
+      // Todas as cidades do PDF
+      const markers = [
+        { coords: [-15.8014, -43.3092] }, // Janaúba/MG
+        { coords: [-23.4205, -51.9333] }, // Maringá/PR
+        { coords: [-3.1190, -60.0217] }, // Manaus/AM
+        { coords: [-21.3889, -42.6972] }, // Cataguases/MG
+        { coords: [-23.2644, -47.2997] }, // Itu/SP
+        { coords: [-25.4742, -48.8331] }, // Morretes/PR
+        { coords: [-1.1953, -47.1806] }, // Capanema/PA
+        { coords: [-5.3686, -49.1178] }, // Nova Marabá/PA
+        { coords: [2.8196, -60.6738] }, // Boa Vista/RR
+        { coords: [-23.2237, -45.9009] }, // São José dos Campos/SP
+        { coords: [-21.1704, -47.8103] }, // Ribeirão Preto/SP
+        { coords: [-22.3711, -46.9428] }, // Mogi Guaçu/SP
+        { coords: [-23.5508, -51.4606] }, // Apucarana/PR
+        { coords: [-8.7533, -38.9650] }, // Belém do São Francisco/PE
+        { coords: [-20.4697, -54.6201] }, // Campo Grande/MS
+        { coords: [-23.4417, -46.9181] }, // Santana de Parnaíba/SP
+        { coords: [-28.8372, -49.2419] }, // Balneário Rincão/SC
+        { coords: [-19.9167, -43.9345] }, // Belo Horizonte/MG
+        { coords: [-30.0346, -51.2177] }, // Porto Alegre/RS
+        { coords: [-26.8989, -48.6511] }, // Navegantes/SC
+        { coords: [-24.0059, -46.4128] }, // Praia Grande/SP
+        { coords: [-15.4667, -58.3500] }, // Araputanga/MT
+        { coords: [-23.5505, -46.6333] }, // São Paulo/SP
+        { coords: [-25.4422, -49.0628] }, // Piraquara/PR
+        { coords: [-27.0086, -51.1514] }, // Videira/SC
+        { coords: [-23.5228, -46.1878] }, // Mogi das Cruzes/SP
+        { coords: [-5.0892, -42.8019] }, // Teresina/PI
+        { coords: [-21.7642, -43.3503] }, // Juiz de Fora/MG
+        { coords: [-23.4538, -46.5333] }, // Guarulhos/SP
+        { coords: [-26.9906, -48.6350] }, // Balneário Camboriú/SC
+        { coords: [-22.2300, -45.9364] }, // Pouso Alegre/MG
+        { coords: [-21.7878, -46.5614] }, // Poços de Caldas/MG
+        { coords: [-23.6203, -45.4130] }, // Caraguatatuba/SP
+        { coords: [-8.7608, -63.8999] }, // Porto Velho/RO
+        { coords: [-3.6669, -45.3797] } // Santa Inês/MA
+      ];
+
+      // Ícone verde customizado
+      const greenIcon = L.icon({
+        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+      });
+
+      const map = L.map('map').setView([-14.235, -51.9253], 4);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors',
+        maxZoom: 19,
+      }).addTo(map);
+
+      markers.forEach((m) => {
+        L.marker(m.coords, { icon: greenIcon })
+          .addTo(map);
+      });
+
+      setTimeout(() => {
+        map.invalidateSize();
+      }, 200);
+    };
+  });
+</script>

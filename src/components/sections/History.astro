@@ -1,0 +1,60 @@
+---
+import Card from "../ui/Card.astro";
+import Section from "./Section.astro";
+---
+
+<Section>
+  <Card>
+    <div
+      class="flex flex-col bg-gray rounded-[45px] p-8 md:p-[60px] gap-8 md:gap-12 items-center text-center"
+    >
+      <!-- Tag superior -->
+      <div>
+        <span class="inline-block bg-green text-white px-4 py-2 rounded-full text-[14px] md:text-[16px] light">
+         <p> A HISTÓRIA QUE VAI MUDAR SUA PERSPECTIVA SOBRE CARREIRA</p>
+        </span>
+      </div>
+
+
+      <!-- Gancho emocional -->
+      <p class="text-gray-200">
+        Sabe aquela sensação de estar "preso" em uma profissão que não te dá a liberdade e renda que você merece?
+      </p>
+
+      <p><span class="text-green">
+        Eu conheço essa dor.</span>
+      </p>
+
+      <!-- História -->
+      <div class="flex flex-col gap-6">
+        <p>
+          Milhões de brasileiros vivem essa realidade todos os dias. Mas hoje quero te contar sobre <span class="regular">Maria Silva, de Campinas...</span>
+        </p>
+
+        <p>
+          Maria era contadora há 15 anos. Ganhava seus R$ 4.000 mensais, mas sentia que estava apenas "sobrevivendo". Tinha o sonho de ter seu próprio negócio, mas não sabia por onde começar.
+        </p>
+
+        <p>
+          Até descobrir a profissão de <span class="regular text-green">Regularizador de Imóveis.</span>
+        </p>
+
+        <!-- Box de destaque -->
+        <div class="bg-green bg-opacity-10 border-l-4 border-green p-6 rounded-r-lg">
+          <p class="regular">
+            Em apenas 8 meses, Maria saiu do zero e hoje fatura R$ 12.000 por mês ajudando famílias a regularizar seus imóveis. Trabalha de casa, escolhe seus clientes e, pela primeira vez na vida, sente que está REALMENTE fazendo a diferença.
+          </p>
+        </div>
+
+        <p>
+          E o melhor? Ela não é advogada. Não é engenheira. Era "apenas" uma contadora que decidiu AGIR.
+        </p>
+      </div>
+
+      <!-- CTA -->
+      <div class="flex justify-center md:justify-start mt-4">
+        <button class="btn-primary">QUERO TER ACESSO AGORA</button>
+      </div>
+    </div>
+  </Card>
+</Section>

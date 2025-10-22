@@ -1,0 +1,98 @@
+---
+import Card from "../ui/Card.astro";
+import Section from "./Section.astro";
+import { Check, Zap } from "lucide-astro";
+---
+
+<Section>
+  <Card>
+    <div
+      class="flex flex-col bg-gray rounded-[45px] p-8 md:p-[60px] gap-8 md:gap-12 items-center text-center"
+    >
+      <!-- Título principal -->
+      <h1>
+        SUA NOVA VIDA COMEÇA COM UMA DECISÃO
+      </h1>
+
+      <!-- Introdução -->
+      <p>
+        Imagina acordar amanhã sabendo que você tem:
+      </p>
+
+      <!-- Lista de benefícios -->
+      <div class="flex flex-col gap-4 text-left w-full max-w-3xl">
+        
+        <div class="flex items-start gap-3">
+          <Check size={24} class="flex-shrink-0 mt-1 text-green" />
+          <p class="text-[16px] md:text-[20px] lg:text-[24px] light">
+            Uma profissão com demanda garantida
+          </p>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <Check size={24} class="flex-shrink-0 mt-1 text-green" />
+          <p class="text-[16px] md:text-[20px] lg:text-[24px] light">
+            Liberdade para trabalhar de onde quiser
+          </p>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <Check size={24} class="flex-shrink-0 mt-1 text-green" />
+          <p class="text-[16px] md:text-[20px] lg:text-[24px] light">
+            Renda entre R$ 3.000 e R$ 15.000 mensais
+          </p>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <Check size={24} class="flex-shrink-0 mt-1 text-green" />
+          <p class="text-[16px] md:text-[20px] lg:text-[24px] light">
+            O orgulho de resolver problemas reais das famílias
+          </p>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <Check size={24} class="flex-shrink-0 mt-1 text-green" />
+          <p class="text-[16px] md:text-[20px] lg:text-[24px] light">
+            Um futuro financeiro seguro e próspero
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Chamada -->
+      <div class="flex flex-col gap-4">
+        <p class="regular">
+          Isso não é sonho. É realidade para centenas de nossos alunos.
+        </p>
+
+        <p class="regular text-green text-[20px] md:text-[24px] lg:text-[28px]">
+          E pode ser SUA realidade também.
+        </p>
+      </div>
+
+      <!-- CTA Principal -->
+      <div class="flex justify-center mt-4">
+        <button class="btn-primary text-[16px] md:text-[20px] lg:text-[24px]">
+          QUERO COMEÇAR MINHA NOVA PROFISSÃO AGORA!
+        </button>
+      </div>
+
+      <!-- Espaço -->
+      <div class="mt-4"></div>
+
+      <!-- Garantia -->
+      <div class="bg-green bg-opacity-10 border-2 border-green rounded-2xl p-6 md:p-8 w-full max-w-2xl">
+        <div class="flex items-center justify-center gap-3 mb-4">
+          <Zap size={28} class="text-green" />
+          <h3 class="text-white text-[18px] md:text-[24px] lg:text-[28px]">
+            GARANTIA INCONDICIONAL DE 7 DIAS
+          </h3>
+        </div>
+        <p class="text-[14px] md:text-[18px] lg:text-[20px] light">
+          Se por qualquer motivo você não ficar 100% satisfeito, devolvemos todo seu investimento. Sem perguntas, sem burocracia.
+        </p>
+      </div>
+
+    </div>
+  </Card>
+</Section>
