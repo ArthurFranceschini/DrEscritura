@@ -3,12 +3,14 @@ import MainLayout from "../layouts/MainLayout.astro";
 import HeroCourse from "@/components/sections/HeroCourse.astro";
 import InfoCourse from "@/components/sections/InfoCourse.astro";
 import PlanoCourse from '@/components/sections/PlanoCourse.astro';
+import InfoWill from "@/components/sections/InfoWill.astro";
 import PropostaCourse from "@/components/sections/PropostaCourse.astro";
 import FAQCourse from "@/components/sections/FAQCourse.astro";
 import History from "@/components/sections/History.astro";
 import Urgency from '@/components/sections/Urgency.astro';
 import Bonus from '@/components/sections/Bonus.astro';
 import NovaVida from '@/components/sections/NovaVida.astro';
+import Duvidas from "@/components/sections/Duvidas.astro";
 ---
 
 <MainLayout
@@ -17,8 +19,10 @@ import NovaVida from '@/components/sections/NovaVida.astro';
   description="Um curso Dr Escritura">
   <HeroCourse/>
   <History/>
+  <InfoWill/>
   <PropostaCourse/> 
   <InfoCourse/>
+  <Duvidas/>
   <Urgency/>
   <PlanoCourse/>
   <NovaVida/>

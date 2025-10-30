@@ -6,26 +6,31 @@ import Section from "./Section.astro";
 import propImg from "../../assets/pics/proposal-pic.png";
 ---
 
-<Section>
+<Section id="Infoprodutos">
   <Card>
     <div
       class="flex flex-col md:grid md:grid-cols-2 bg-gray rounded-[45px] p-8 md:p-[60px] gap-12 items-center"
     >
       <div class="flex flex-col justify-center gap-6 md:pr-8">
         <h2>
-          Confira nossos cursos!
+          Confira nossos cursos exclusivos!
         </h2>
-        <p>
-          Descubra como a carreira de regularizador de imóveis pode transformar sua trajetória profissional, oferecendo um modelo de atuação comprovado e suporte completo para que você atue com segurança, eficiência e resultados consistentes no mercado imobiliário.
+        <p class="text-lg font-semibold">
+          Aprenda com <span class="text-primary font-bold">WILL BISPO</span> como se tornar um regularizador de imóveis e trabalhar em uma das profissões mais rentáveis atualmente!
         </p>
-        <button class="btn-primary w-fit">Conferir</button>
+        <p>
+          Descubra o passo a passo completo para construir uma carreira sólida e lucrativa na regularização de imóveis. Com metodologia comprovada, suporte especializado e técnicas exclusivas, você terá tudo o que precisa para dominar esse mercado em expansão e conquistar sua independência financeira atuando com segurança, eficiência e resultados extraordinários.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/RegularizadorDeImoveis" class="btn-primary w-fit">Quero conhecer os cursos!</a>
+        </div>
       </div>
 
       <picture class="flex justify-center items-center">
         <Image
           src={propImg}
-          alt="Isto é uma imagem"
-          class="w-full h-auto object-contain rounded-[45px]"
+          alt="Will Bispo - Especialista em Regularização de Imóveis"
+          class="w-full h-auto object-contain rounded-[45px] shadow-xl"
         />
       </picture>
     </div>

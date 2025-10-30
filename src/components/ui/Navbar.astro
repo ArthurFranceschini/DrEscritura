@@ -2,11 +2,11 @@
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
 const menuitems = [
-  { href: '#hero', label: 'Ínicio' },
-  { href: "#beneficios", label: 'Beneficios' },
-  { href: "#depoimentos", label: 'Depoimentos' },
+  { href: '#Hero', label: 'Ínicio' },
+  { href: "#Beneficios", label: 'Benefícios' },
   { href: "#Infoprodutos", label: 'Infoprodutos' },
-  { href: "#planos", label: 'Planos'},
+  { href: "#Planos", label: 'Planos'},
+  { href: "#Depoimentos", label: 'Depoimentos' },
 ];
 
 const navButton = { href: 'https://github.com/ArthurFranceschini', label: 'Entre em contato' };
@@ -40,7 +40,7 @@ const navButton = { href: 'https://github.com/ArthurFranceschini', label: 'Entre
               <li>
                 <a 
                   href={item.href} 
-                  class="mobile-nav-link block py-2 px-3 text-black rounded lg:bg-transparent lg:p-0"
+                  class="mobile-nav-link block py-2 px-3 text-black rounded lg:bg-transparent lg:p-0 hover:text-gray-600 transition-colors"
                   data-close-menu="true"
                 >
                   {item.label}
@@ -62,37 +62,59 @@ const navButton = { href: 'https://github.com/ArthurFranceschini', label: 'Entre
 
       <div>
         <div class="hidden lg:flex items-center gap-4">
-                <a href="https://github.com/ArthurFranceschini" target="_blank" class="btn-primary text-xl font-normal leading-7">
-{navButton.label}</a>
+          <a href={navButton.href} target="_blank" class="btn-primary text-xl font-normal leading-7">
+            {navButton.label}
+          </a>
         </div>
       </div>
     </header>
   </nav>
 </div>
 
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+
 <script is:inline>
-  // Get references to the menu icon, open/close icons, and menu items
-  const menuIcon = document.getElementById('menu-icon');
-  const openIcon = document.getElementById('open-icon');
-  const closeIcon = document.getElementById('close-icon');
-  const menuItems = document.getElementById('menu-items');
-  const closeMenuItems = document.querySelectorAll('[data-close-menu="true"]');  // Select all items with the 'data-close-menu' attribute
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuIcon = document.getElementById('menu-icon');
+    const openIcon = document.getElementById('open-icon');
+    const closeIcon = document.getElementById('close-icon');
+    const menuItems = document.getElementById('menu-items');
+    const closeMenuItems = document.querySelectorAll('[data-close-menu="true"]');
 
-  // Toggle the menu visibility and icon when the menu icon is clicked
-  menuIcon.addEventListener('click', () => {
-    menuItems.classList.toggle('hidden');  // Toggle the 'hidden' class on the menu
+    if (menuIcon && openIcon && closeIcon && menuItems) {
+      menuIcon.addEventListener('click', () => {
+        menuItems.classList.toggle('hidden');
+        openIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
 
-    // Toggle between open and close icons
-    openIcon.classList.toggle('hidden');
-    closeIcon.classList.toggle('hidden');
-  });
+      closeMenuItems.forEach(item => {
+        item.addEventListener('click', () => {
+          menuItems.classList.add('hidden');
+          openIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+        });
+      });
+    }
 
-  // Close the menu when any item is clicked
-  closeMenuItems.forEach(item => {
-    item.addEventListener('click', () => {
-      menuItems.classList.add('hidden');  // Add the 'hidden' class to hide the menu
-      openIcon.classList.remove('hidden');  // Show the open (hamburger) icon
-      closeIcon.classList.add('hidden');  // Hide the close (X) icon
+    // Adiciona smooth scroll para todos os links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
     });
   });
 </script>

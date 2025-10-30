@@ -19,22 +19,6 @@ const plans = [
     ],
     highlight: false
   },
-  {
-    title: "FULL",
-    price: "CONSULTE",
-    roi: "12 a 18 meses",
-    margin: "40% em média",
-    features: [
-      "Modelo de negócio comprovado",
-      "Marca forte e respeitada",
-      "Treinamentos", 
-      "Suporte Técnico, Jurídico e Marketing",
-      "Associado ABF",
-      "Ponto comercial",
-      "Projeto arquitetônico"
-    ],
-    highlight: true
-  }
 ];
 
 const description = "Escolha o modelo de franquia que mais combina com seu perfil e objetivos";
@@ -43,64 +27,66 @@ const description = "Escolha o modelo de franquia que mais combina com seu perfi
 <Section id="Planos">
   <SectionTitle sectionTitle="Nossos Planos" description={description} />
   
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 xl:gap-10 mt-8">
-    {plans.map((plan) => (
-      <Card isUnderline={true}>
-        <div 
-          class={`flex flex-col text-center rounded-[45px] overflow-hidden h-full p-8
-            ${plan.highlight ? 'bg-green text-black' : 'bg-gray text-black'}`}
-        >
-          <h3 class="mb-4 font-semibold">{plan.title}</h3>
-          
-          <div class="flex justify-center items-baseline my-6">
-            <span class="text-3xl lg:text-4xl font-semibold">{plan.price}</span>
-          </div>
-          
-          <div class="grid grid-cols-2 gap-4 mb-8 pb-8 border-b border-gray-300">
-            <div class="text-left">
-              <p class="text-sm opacity-80">Retorno do Investimento</p>
-              <p class="font-semibold">{plan.roi}</p>
+  <div class="flex justify-center mt-8">
+    <div class="w-full max-w-lg">
+      {plans.map((plan) => (
+        <Card isUnderline={true}>
+          <div 
+            class={`flex flex-col text-center rounded-[45px] overflow-hidden h-full p-8
+              ${plan.highlight ? 'bg-green text-black' : 'bg-gray text-black'}`}
+          >
+            <h3 class="mb-4 font-semibold">{plan.title}</h3>
+            
+            <div class="flex justify-center items-baseline my-6">
+              <span class="text-3xl lg:text-4xl font-semibold">{plan.price}</span>
             </div>
-            <div class="text-left">
-              <p class="text-sm opacity-80">Margem de Lucro</p>
-              <p class="font-semibold">{plan.margin}</p>
+            
+            <div class="grid grid-cols-2 gap-4 mb-8 pb-8 border-b border-gray-300">
+              <div class="text-left">
+                <p class="text-sm opacity-80">Retorno do Investimento</p>
+                <p class="font-semibold">{plan.roi}</p>
+              </div>
+              <div class="text-left">
+                <p class="text-sm opacity-80">Margem de Lucro</p>
+                <p class="font-semibold">{plan.margin}</p>
+              </div>
+            </div>
+            
+            <ul role="list" class="mb-8 space-y-4 text-left">
+              {plan.features.map((feature) => (
+                <li class="flex items-start space-x-3">
+                  <svg 
+                    class={`flex-shrink-0 w-5 h-5 mt-0.5 ${plan.highlight ? 'text-black' : 'text-green'}`} 
+                    fill="currentColor" 
+                    viewBox="0 0 20 20" 
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path 
+                      fill-rule="evenodd" 
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" 
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+            
+            <div class="mt-auto pt-4">
+              <a 
+                href="#contato" 
+                class={`font-medium rounded-lg px-8 py-3 w-full block transition-colors ${
+                  plan.highlight 
+                    ? 'bg-white text-black hover:bg-dark hover:text-white' 
+                    : 'bg-green text-black hover:bg-dark hover:text-white'
+                }`}
+              >
+                Quero saber mais
+              </a>
             </div>
           </div>
-          
-          <ul role="list" class="mb-8 space-y-4 text-left">
-            {plan.features.map((feature) => (
-              <li class="flex items-start space-x-3">
-                <svg 
-                  class={`flex-shrink-0 w-5 h-5 mt-0.5 ${plan.highlight ? 'text-black' : 'text-green'}`} 
-                  fill="currentColor" 
-                  viewBox="0 0 20 20" 
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path 
-                    fill-rule="evenodd" 
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" 
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-                <span>{feature}</span>
-              </li>
-            ))}
-          </ul>
-          
-          <div class="mt-auto pt-4">
-            <a 
-              href="#contato" 
-              class={`font-medium rounded-lg px-8 py-3 w-full block transition-colors ${
-                plan.highlight 
-                  ? 'bg-white text-black hover:bg-dark hover:text-white' 
-                  : 'bg-green text-black hover:bg-dark hover:text-white'
-              }`}
-            >
-              Quero saber mais
-            </a>
-          </div>
-        </div>
-      </Card>
-    ))}
+        </Card>
+      ))}
+    </div>
   </div>
 </Section>

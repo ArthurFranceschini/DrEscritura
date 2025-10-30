@@ -8,12 +8,18 @@ const logos = [
   { name: "Linkedin", icon: Linkedin, link: "https://linkedin.com" },
 ];
 
+// Detecta se está na home ou em outra página
+const currentPath = Astro.url.pathname;
+const isHome = currentPath === '/' || currentPath === '';
+const baseUrl = isHome ? '' : '/';
+
 const links = [
-  { name: "Home", href: "#hero" },
-  { name: "Benefícios", href: "#beneficios" },
-  { name: "Depoimentos", href: "#depoimentos" },
-  { name: "Infoprodutos", href: "#infoprodutos" },
-  { name: "Planos", href: "#planos" },
+  { name: "Home", href: `${baseUrl}#Hero` },
+  { name: "Sobre", href: `${baseUrl}#Abf` },
+  { name: "Benefícios", href: `${baseUrl}#Beneficios` },
+  { name: "Infoprodutos", href: `${baseUrl}#Infoprodutos` },
+  { name: "Planos", href: `${baseUrl}#Planos` },
+  { name: "Depoimentos", href: `${baseUrl}#Depoimentos` },
 ];
 ---
 
@@ -27,7 +33,7 @@ const links = [
           class="flex flex-col lg:flex-row gap-7 items-center justify-between"
         >
           <picture>
-            <a href="#home">
+            <a href="/#Hero">
               <Image 
                 src={Logo} 
                 alt="Logo" 
@@ -40,7 +46,7 @@ const links = [
               links.map((link) => {
                 return (
                   <li class="text-center">
-                    <a class="underline" href={link.href}>
+                    <a class="underline hover:text-white transition-colors" href={link.href}>
                       {link.name}
                     </a>
                   </li>
@@ -53,7 +59,7 @@ const links = [
               logos.map(({ name, icon: Icon, link }) => {
                 return (
                   <li>
-                    <a href={link} target="_blank">
+                    <a href={link} target="_blank" class="hover:text-white transition-colors">
                       <Icon class="w-6 h-6" />
                     </a>
                   </li>
@@ -81,4 +87,5 @@ const links = [
         </div>
       </div>
     </div>
+  </div>
 </section>

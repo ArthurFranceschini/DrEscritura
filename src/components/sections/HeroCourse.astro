@@ -1,15 +1,54 @@
 ---
 import Section from "./Section.astro";
+import heroBackground from "@/assets/company/hero-background.webp"; 
+
+// Define o tipo da variant
+type Variant = "hotmart" | "whatsapp";
+
+// Recebe a prop variant com tipo específico
+const { variant = "hotmart" }: { variant?: Variant } = Astro.props;
+
+// Define o link e texto do botão baseado na variant
+const buttonConfig: Record<Variant, { link: string; text: string }> = {
+  hotmart: {
+    link: "linkhotmart", // Coloca o link real aqui
+    text: "Acesse o Curso"
+  },
+  whatsapp: {
+    link: "nmrwpp", // Coloca seu WhatsApp aqui
+    text: "Falar no WhatsApp"
+  }
+};
+
+const button = buttonConfig[variant];
 ---
 
-<Section id="HeroCourse" class="px-5 py-12 md:py-16 lg:py-20">
-  <div class="max-w-[1280px] mx-auto">
+<Section id="HeroCourse" class="relative px-5 py-12 md:py-16 lg:py-20 overflow-hidden">
+  <!-- Background Image -->
+  <div class="absolute inset-0 z-0">
+    <img 
+      src={heroBackground.src} 
+      alt="" 
+      class="w-full h-full object-cover"
+    />
+  </div>
+  
+  <!-- Overlay escuro opcional para melhorar legibilidade do texto -->
+  <div class="absolute inset-0 z-[1] bg-white opacity-60"></div>
+
+  <!-- Conteúdo -->
+  <div class="relative z-10 max-w-[1280px] mx-auto">
     <div class="flex flex-col items-center text-center">
       
-      <!-- Pequeno texto superior -->
-      <p class="text-[16px] lg:text-[24px] font-regular">
-        Um produto <span class="font-semibold text-green">Dr Escritura</span>
-      </p>
+      <!-- Pequeno texto superior com logo -->
+      <div class="flex items-end gap-2 text-[16px] lg:text-[20px] font-regular bg-white rounded-full px-6 py-3">
+        <span>Um produto</span>
+        <img 
+          src="/Logo.svg" 
+          alt="Dr Escritura" 
+          class="h-10 lg:h-12 w-auto"
+        />
+      </div>
 
       <!-- Espaçamento 16px mobile / 32px desktop -->
       <div class="mt-4 lg:mt-8"></div>
@@ -23,16 +62,21 @@ import Section from "./Section.astro";
       <div class="mt-4 lg:mt-8"></div>
 
       <!-- H2 descritivo -->
-      <h2 class="text-[20px] lg:text-[28px] font-regular max-w-4xl">
+      <p class="text-[16px] lg:text-[20px] font-regular max-w-4xl">
         Descubra como se tornar um <span class="font-semibold">Regularizador de Imóveis</span> e construir uma carreira sólida em um <span class="font-semibold">mercado que movimenta R$ 2.000.000.000,00 anualmente</span>
-      </h2>
+      </p>
 
       <!-- Espaçamento dobrado: 32px mobile / 64px desktop -->
       <div class="mt-8 lg:mt-16"></div>
 
-      <!-- Botão -->
-      <a href="#" class="text-[16px] lg:text-[24px] font-regular bg-green text-black px-8 py-4 lg:px-10 lg:py-5 rounded-lg hover:bg-dark hover:text-white transition-all duration-200">
-        Acesse o Curso
+      <!-- Botão - AGORA COM LINK DINÂMICO -->
+      <a 
+        href={button.link} 
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-[16px] lg:text-[24px] font-regular bg-green text-black px-8 py-4 lg:px-10 lg:py-5 rounded-lg hover:bg-dark hover:text-white transition-all duration-200"
+      >
+        {button.text}
       </a>
 
     </div>
