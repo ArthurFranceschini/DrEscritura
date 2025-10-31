@@ -24,6 +24,14 @@
 			"dest": "_render"
 		},
 		{
+			"src": "^/RegularizadorDeImoveis/V2/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/RegularizadorDeImoveis/?$",
+			"dest": "_render"
+		},
+		{
 			"src": "^/$",
 			"dest": "_render"
 		},

@@ -73,9 +73,8 @@
       }).addTo(map);
 
       markers.forEach((m) => {
-        L.marker(m.coords, { icon: greenIcon })
-          .addTo(map);
-      });
+  L.marker(m.coords as [number, number], { icon: greenIcon }).addTo(map);
+});
 
       setTimeout(() => {
         map.invalidateSize();
