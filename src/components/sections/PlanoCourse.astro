@@ -30,142 +30,28 @@ const button = buttonConfig[variant];
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8">
       
       <!-- Card de Pricing - Ocupa 2 colunas no desktop -->
-      <div class="lg:col-span-2 bg-green rounded-3xl px-8 pt-16 pb-8">
+      <div class="lg:col-span-2 bg-green rounded-3xl px-6 sm:px-8 pt-12 sm:pt-16 pb-8">
         
-        <!-- Plano anual -->
-        <p class="text-[12px] lg:text-[16px] font-regular text-center lg:text-left">
-          Plano anual
-        </p>
-        
-        <!-- Espaço 4px -->
-        <div class="mt-1"></div>
-        
-        <!-- Acesso completo -->
-        <p class="text-[16px] lg:text-[32px] font-semibold text-center lg:text-left">
-          Acesso completo
-        </p>
-        
-        <!-- Espaço 16px -->
-        <div class="mt-4"></div>
-        
-        {variant === "hotmart" && (
-          <>
-            <div class="flex items-center justify-center lg:justify-start gap-4">
-              <p class="text-[24px] lg:text-[32px] font-semibold">
-                R$ 997,00
-              </p>
-              <div class="flex flex-col text-left">
-                <span class="text-[12px] lg:text-[16px] font-regular uppercase">Garantia Incondicional</span>
-                <span class="text-[12px] lg:text-[16px] font-semibold uppercase">de 7 Dias</span>
-              </div>
-            </div>
-            
-            <!-- Espaço 32px -->
-            <div class="mt-8"></div>
-          </>
-        )}
-        
-        <!-- Botão - AGORA COM LINK DINÂMICO -->
-        <a 
-          href={button.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="block text-[16px] lg:text-[24px] font-regular bg-white text-black px-8 py-4 lg:px-10 lg:py-5 rounded-lg hover:bg-dark hover:text-white transition-all duration-200 text-center w-full lg:w-auto"
-        >
-          {button.text}
-        </a>
-        
-        <!-- Espaço 32px -->
-        <div class="mt-8"></div>
-        
-        <!-- Lista de benefícios em grid de 2 colunas no desktop -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 text-left">
-          
-          <!-- Coluna Esquerda -->
-          <div class="space-y-4">
-            <!-- Item 1 -->
-            <div class="flex items-start gap-3">
-              <Check size={20} class="flex-shrink-0 mt-1" />
-              <p class="text-[12px] lg:text-[16px] font-regular">1. Fundamentos da Regularização</p>
-            </div>
-            
-            <!-- Item 2 -->
-            <div class="flex items-start gap-3">
-              <Check size={20} class="flex-shrink-0 mt-1" />
-              <p class="text-[12px] lg:text-[16px] font-regular">2. Metodologia Dr. Escritura</p>
-            </div>
-            
-            <!-- Item 3 -->
-            <div class="flex items-start gap-3">
-              <Check size={20} class="flex-shrink-0 mt-1" />
-              <p class="text-[12px] lg:text-[16px] font-regular">3. Captação de Clientes</p>
-            </div>
-            
-            <!-- Item 4 -->
-            <div class="flex items-start gap-3">
-              <Check size={20} class="flex-shrink-0 mt-1" />
-              <p class="text-[12px] lg:text-[16px] font-regular">4. Execução e Escala</p>
-            </div>
-          </div>
-          
-          <!-- Coluna Direita -->
-          <div class="space-y-4">
-            <!-- Item 5 -->
-            <div class="flex items-start gap-3">
-              <Check size={20} class="flex-shrink-0 mt-1" />
-              <p class="text-[12px] lg:text-[16px] font-regular">5. Marketing Estratégico</p>
-            </div>
-            
-            <!-- Item 6 -->
-            <div class="flex items-start gap-3">
-              <Check size={20} class="flex-shrink-0 mt-1" />
-              <p class="text-[12px] lg:text-[16px] font-regular">6. Kit de Documentos Prontos</p>
-            </div>
-            
-            <!-- Item 7 -->
-            <div class="flex items-start gap-3">
-              <Check size={20} class="flex-shrink-0 mt-1" />
-              <p class="text-[12px] lg:text-[16px] font-regular">7. Masterclasses Exclusivas</p>
-            </div>
-            
-            <!-- Item 8 -->
-            <div class="flex items-start gap-3">
-              <Check size={20} class="flex-shrink-0 mt-1" />
-              <p class="text-[12px] lg:text-[16px] font-regular">8. Certificação Profissional</p>
-            </div>
-          </div>
-          
-        </div>
-        
-        <!-- Espaço 64px -->
-        <div class="mt-16"></div>
-        
-        <!-- Divisor -->
-        <div class="w-full h-[2px] bg-white opacity-20"></div>
-        
-        <!-- Espaço 32px -->
-        <div class="mt-8"></div>
-        
-        <!-- Seção de Bônus -->
-        <!-- Título com ícone -->
-        <div class="flex items-center justify-center lg:justify-start gap-3">
-          <Gift size={32} class="flex-shrink-0" />
-          <p class="text-[20px] lg:text-[32px] font-semibold">
+        <!-- ========== 1. BÔNUS ========== -->
+        <div class="flex items-center justify-center lg:justify-start gap-2 sm:gap-3">
+          <Gift size={24} class="sm:hidden flex-shrink-0" />
+          <Gift size={32} class="hidden sm:block flex-shrink-0" />
+          <p class="text-[18px] sm:text-[20px] lg:text-[32px] font-semibold text-center lg:text-left">
             BÔNUS PARA QUEM AGIR HOJE:
           </p>
         </div>
         
-        <!-- Espaço 32px -->
-        <div class="mt-8"></div>
+        <!-- Espaço 24px mobile / 32px desktop -->
+        <div class="mt-6 lg:mt-8"></div>
         
-        <!-- Lista de bônus em grid de 2 colunas no desktop -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-left">
+        <!-- Lista de bônus em grid de 1 coluna mobile / 2 colunas desktop -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 text-left">
           
           <!-- BÔNUS #1 -->
           <div class="flex items-start gap-3">
             <Check size={20} class="flex-shrink-0 mt-1" />
             <div>
-              <p class="text-[14px] lg:text-[20px] font-regular">
+              <p class="text-[13px] sm:text-[14px] lg:text-[20px] font-regular">
                 Bônus 1 — Kit completo de documentos de <span class="font-semibold">R$ 4.997</span> por <span class="font-semibold">R$ 0,00</span>
               </p>
             </div>
@@ -175,7 +61,7 @@ const button = buttonConfig[variant];
           <div class="flex items-start gap-3">
             <Check size={20} class="flex-shrink-0 mt-1" />
             <div>
-              <p class="text-[14px] lg:text-[20px] font-regular">
+              <p class="text-[13px] sm:text-[14px] lg:text-[20px] font-regular">
                 Bônus 2 — GUIA - CÓDIGOS DA REGULARIZAÇÃO DE IMÓVEIS de <span class="font-semibold">R$ 197</span> por <span class="font-semibold">R$ 0,00</span>
               </p>
             </div>
@@ -185,7 +71,7 @@ const button = buttonConfig[variant];
           <div class="flex items-start gap-3">
             <Check size={20} class="flex-shrink-0 mt-1" />
             <div>
-              <p class="text-[14px] lg:text-[20px] font-regular">
+              <p class="text-[13px] sm:text-[14px] lg:text-[20px] font-regular">
                 Bônus 3 — Certificado de conclusão <span class="font-semibold">R$ 197</span> por <span class="font-semibold">R$ 0,00</span>
               </p>
             </div>
@@ -193,34 +79,144 @@ const button = buttonConfig[variant];
           
         </div>
         
-        <!-- Espaço 32px -->
-        <div class="mt-8"></div>
+        <!-- Espaço 24px mobile / 32px desktop -->
+        <div class="mt-6 lg:mt-8"></div>
         
         <!-- Divisor -->
-        <div class="w-full h-[2px] bg-white opacity-20"></div>
+        <div class="w-full h-[1px] sm:h-[2px] bg-white opacity-20"></div>
         
-        <!-- Espaço 16px -->
-        <div class="mt-4"></div>
+        <!-- Espaço 12px mobile / 16px desktop -->
+        <div class="mt-3 lg:mt-4"></div>
         
         <!-- Valor total dos bônus -->
         <div class="text-center lg:text-left">
-          <p class="text-[16px] lg:text-[24px] font-regular">
+          <p class="text-[14px] sm:text-[16px] lg:text-[24px] font-regular">
             Valor total dos bônus: <span class="font-semibold">R$ 5.391,00</span>
           </p>
         </div>
         
-        <!-- Espaço 16px -->
-        <div class="mt-4"></div>
+        <!-- Espaço 12px mobile / 16px desktop -->
+        <div class="mt-3 lg:mt-4"></div>
         
         <!-- Mensagem final -->
         <div class="text-center lg:text-left">
-          <p class="text-[16px] lg:text-[20px] font-regular italic">
+          <p class="text-[14px] sm:text-[16px] lg:text-[20px] font-regular italic">
             "Ou seja, os bônus já pagam o curso sozinho!"
           </p>
         </div>
         
-        <!-- Espaço 32px -->
-        <div class="mt-8"></div>
+        <!-- Espaço 48px mobile / 64px desktop -->
+        <div class="mt-12 lg:mt-16"></div>
+        
+        <!-- Divisor -->
+        <div class="w-full h-[1px] sm:h-[2px] bg-white opacity-20"></div>
+        
+        <!-- Espaço 24px mobile / 32px desktop -->
+        <div class="mt-6 lg:mt-8"></div>
+        
+        <!-- ========== 2. RECEBIMENTO (O que você vai receber) ========== -->
+        <div class="text-center lg:text-left mb-6 lg:mb-8">
+          <p class="text-[10px] sm:text-[12px] lg:text-[16px] font-regular uppercase tracking-wider opacity-90">
+            Plano anual
+          </p>
+          <div class="mt-1 sm:mt-2"></div>
+          <p class="text-[18px] sm:text-[20px] lg:text-[32px] font-semibold">
+            Acesso completo ao curso
+          </p>
+        </div>
+        
+        <!-- Lista de benefícios em grid de 1 coluna mobile / 2 colunas desktop -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 text-left">
+          
+          <!-- Coluna Esquerda -->
+          <div class="space-y-3 sm:space-y-4">
+            <!-- Item 1 -->
+            <div class="flex items-start gap-3">
+              <Check size={20} class="flex-shrink-0 mt-1" />
+              <p class="text-[12px] sm:text-[13px] lg:text-[16px] font-regular">1. Fundamentos da Regularização</p>
+            </div>
+            
+            <!-- Item 2 -->
+            <div class="flex items-start gap-3">
+              <Check size={20} class="flex-shrink-0 mt-1" />
+              <p class="text-[12px] sm:text-[13px] lg:text-[16px] font-regular">2. Metodologia Dr. Escritura</p>
+            </div>
+            
+            <!-- Item 3 -->
+            <div class="flex items-start gap-3">
+              <Check size={20} class="flex-shrink-0 mt-1" />
+              <p class="text-[12px] sm:text-[13px] lg:text-[16px] font-regular">3. Captação de Clientes</p>
+            </div>
+            
+            <!-- Item 4 -->
+            <div class="flex items-start gap-3">
+              <Check size={20} class="flex-shrink-0 mt-1" />
+              <p class="text-[12px] sm:text-[13px] lg:text-[16px] font-regular">4. Execução e Escala</p>
+            </div>
+          </div>
+          
+          <!-- Coluna Direita -->
+          <div class="space-y-3 sm:space-y-4">
+            <!-- Item 5 -->
+            <div class="flex items-start gap-3">
+              <Check size={20} class="flex-shrink-0 mt-1" />
+              <p class="text-[12px] sm:text-[13px] lg:text-[16px] font-regular">5. Marketing Estratégico</p>
+            </div>
+            
+            <!-- Item 6 -->
+            <div class="flex items-start gap-3">
+              <Check size={20} class="flex-shrink-0 mt-1" />
+              <p class="text-[12px] sm:text-[13px] lg:text-[16px] font-regular">6. Kit de Documentos Prontos</p>
+            </div>
+            
+            <!-- Item 7 -->
+            <div class="flex items-start gap-3">
+              <Check size={20} class="flex-shrink-0 mt-1" />
+              <p class="text-[12px] sm:text-[13px] lg:text-[16px] font-regular">7. Masterclasses Exclusivas</p>
+            </div>
+            
+            <!-- Item 8 -->
+            <div class="flex items-start gap-3">
+              <Check size={20} class="flex-shrink-0 mt-1" />
+              <p class="text-[12px] sm:text-[13px] lg:text-[16px] font-regular">8. Certificação Profissional</p>
+            </div>
+          </div>
+          
+        </div>
+        
+        <!-- Espaço 32px mobile / 48px desktop -->
+        <div class="mt-8 lg:mt-12"></div>
+        
+        <!-- ========== 3. PREÇO (apenas hotmart) ========== -->
+        {variant === "hotmart" && (
+          <>
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4">
+              <p class="text-[28px] sm:text-[32px] lg:text-[40px] font-bold">
+                R$ 997,00
+              </p>
+              <div class="flex flex-col text-center sm:text-left">
+                <span class="text-[11px] sm:text-[12px] lg:text-[16px] font-regular uppercase tracking-wide">Garantia Incondicional</span>
+                <span class="text-[11px] sm:text-[12px] lg:text-[16px] font-semibold uppercase tracking-wide">de 7 Dias</span>
+              </div>
+            </div>
+            
+            <!-- Espaço 24px mobile / 32px desktop -->
+            <div class="mt-6 lg:mt-8"></div>
+          </>
+        )}
+        
+        <!-- ========== 4. BOTÃO ========== -->
+        <a 
+          href={button.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block text-[14px] sm:text-[16px] lg:text-[24px] font-semibold bg-white text-black px-6 sm:px-8 py-4 lg:px-10 lg:py-5 rounded-lg sm:rounded-xl hover:bg-dark hover:text-white transition-all duration-200 text-center w-full shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98]"
+        >
+          {button.text}
+        </a>
+        
+        <!-- Espaço final 16px -->
+        <div class="mt-4"></div>
         
       </div>
       
