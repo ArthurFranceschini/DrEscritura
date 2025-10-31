@@ -42,7 +42,7 @@ const button = buttonConfig[variant];
         
         <!-- Acesso completo -->
         <p class="text-[16px] lg:text-[32px] font-semibold text-center lg:text-left">
-          Acesso completo + Aulas ao vivo
+          Acesso completo
         </p>
         
         <!-- Espaço 16px -->
@@ -50,7 +50,6 @@ const button = buttonConfig[variant];
         
         {variant === "hotmart" && (
           <>
-            <!-- Preço e Garantia -->
             <div class="flex items-center justify-center lg:justify-start gap-4">
               <p class="text-[24px] lg:text-[32px] font-semibold">
                 R$ 997,00
@@ -82,44 +81,57 @@ const button = buttonConfig[variant];
         <!-- Lista de benefícios em grid de 2 colunas no desktop -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 text-left">
           
-          <!-- Coluna Esquerda - CURSO COMPLETO -->
-          <div class="flex items-start gap-3">
-            <Check size={20} class="flex-shrink-0 mt-1" />
-            <div>
-              <p class="text-[12px] lg:text-[24px] font-semibold uppercase">CURSO COMPLETO</p>
-              <ul class="mt-2 space-y-1 ml-0">
-                <li class="text-[12px] lg:text-[16px] font-regular">1. Fundamentos da Regularização</li>
-                <li class="text-[12px] lg:text-[16px] font-regular">2. Metodologia Dr. Escritura Passo-a-Passo</li>
-                <li class="text-[12px] lg:text-[16px] font-regular">3. Captação de Clientes</li>
-                <li class="text-[12px] lg:text-[16px] font-regular">4. Execução e Escala</li>
-              </ul>
+          <!-- Coluna Esquerda -->
+          <div class="space-y-4">
+            <!-- Item 1 -->
+            <div class="flex items-start gap-3">
+              <Check size={20} class="flex-shrink-0 mt-1" />
+              <p class="text-[12px] lg:text-[16px] font-regular">1. Fundamentos da Regularização</p>
+            </div>
+            
+            <!-- Item 2 -->
+            <div class="flex items-start gap-3">
+              <Check size={20} class="flex-shrink-0 mt-1" />
+              <p class="text-[12px] lg:text-[16px] font-regular">2. Metodologia Dr. Escritura</p>
+            </div>
+            
+            <!-- Item 3 -->
+            <div class="flex items-start gap-3">
+              <Check size={20} class="flex-shrink-0 mt-1" />
+              <p class="text-[12px] lg:text-[16px] font-regular">3. Captação de Clientes</p>
+            </div>
+            
+            <!-- Item 4 -->
+            <div class="flex items-start gap-3">
+              <Check size={20} class="flex-shrink-0 mt-1" />
+              <p class="text-[12px] lg:text-[16px] font-regular">4. Execução e Escala</p>
             </div>
           </div>
           
-          <!-- Coluna Direita - Todos os outros -->
+          <!-- Coluna Direita -->
           <div class="space-y-4">
-            <!-- MARKETING ESTRATÉGICO -->
+            <!-- Item 5 -->
             <div class="flex items-start gap-3">
               <Check size={20} class="flex-shrink-0 mt-1" />
-              <p class="text-[12px] lg:text-[24px] font-semibold uppercase">MARKETING ESTRATÉGICO DE CAPTAÇÃO DE CLIENTES</p>
+              <p class="text-[12px] lg:text-[16px] font-regular">5. Marketing Estratégico</p>
             </div>
             
-            <!-- KIT DE DOCUMENTOS -->
+            <!-- Item 6 -->
             <div class="flex items-start gap-3">
               <Check size={20} class="flex-shrink-0 mt-1" />
-              <p class="text-[12px] lg:text-[24px] font-semibold uppercase">KIT DE DOCUMENTOS PRONTOS</p>
+              <p class="text-[12px] lg:text-[16px] font-regular">6. Kit de Documentos Prontos</p>
             </div>
             
-            <!-- MASTERCLASSES -->
+            <!-- Item 7 -->
             <div class="flex items-start gap-3">
               <Check size={20} class="flex-shrink-0 mt-1" />
-              <p class="text-[12px] lg:text-[24px] font-semibold uppercase">MASTERCLASSES EXCLUSIVAS</p>
+              <p class="text-[12px] lg:text-[16px] font-regular">7. Masterclasses Exclusivas</p>
             </div>
             
-            <!-- CERTIFICAÇÃO -->
+            <!-- Item 8 -->
             <div class="flex items-start gap-3">
               <Check size={20} class="flex-shrink-0 mt-1" />
-              <p class="text-[12px] lg:text-[24px] font-semibold uppercase">CERTIFICAÇÃO E EVIDÊNCIAS</p>
+              <p class="text-[12px] lg:text-[16px] font-regular">8. Certificação Profissional</p>
             </div>
           </div>
           
@@ -139,7 +151,7 @@ const button = buttonConfig[variant];
         <div class="flex items-center justify-center lg:justify-start gap-3">
           <Gift size={32} class="flex-shrink-0" />
           <p class="text-[20px] lg:text-[32px] font-semibold">
-            BÔNUS EXCLUSIVOS PARA QUEM AGIR HOJE:
+            BÔNUS PARA QUEM AGIR HOJE:
           </p>
         </div>
         
@@ -153,11 +165,8 @@ const button = buttonConfig[variant];
           <div class="flex items-start gap-3">
             <Check size={20} class="flex-shrink-0 mt-1" />
             <div>
-              <p class="text-[14px] lg:text-[20px] font-semibold">
-                BÔNUS #1: Kit completo de documentos e contratos
-              </p>
-              <p class="text-[12px] lg:text-[16px] font-regular mt-1">
-                (Valor: R$ 497)
+              <p class="text-[14px] lg:text-[20px] font-regular">
+                Bônus 1 — Kit completo de documentos de <span class="font-semibold">R$ 4.997</span> por <span class="font-semibold">R$ 0,00</span>
               </p>
             </div>
           </div>
@@ -166,11 +175,8 @@ const button = buttonConfig[variant];
           <div class="flex items-start gap-3">
             <Check size={20} class="flex-shrink-0 mt-1" />
             <div>
-              <p class="text-[14px] lg:text-[20px] font-semibold">
-                BÔNUS #2: Masterclass "Primeiros R$ 5.000 em 30 dias"
-              </p>
-              <p class="text-[12px] lg:text-[16px] font-regular mt-1">
-                (Valor: R$ 297)
+              <p class="text-[14px] lg:text-[20px] font-regular">
+                Bônus 2 — GUIA - CÓDIGOS DA REGULARIZAÇÃO DE IMÓVEIS de <span class="font-semibold">R$ 197</span> por <span class="font-semibold">R$ 0,00</span>
               </p>
             </div>
           </div>
@@ -179,24 +185,8 @@ const button = buttonConfig[variant];
           <div class="flex items-start gap-3">
             <Check size={20} class="flex-shrink-0 mt-1" />
             <div>
-              <p class="text-[14px] lg:text-[20px] font-semibold">
-                BÔNUS #3: [Nome do Bônus]
-              </p>
-              <p class="text-[12px] lg:text-[16px] font-regular mt-1">
-                (Valor: R$ 197)
-              </p>
-            </div>
-          </div>
-          
-          <!-- BÔNUS #4 -->
-          <div class="flex items-start gap-3">
-            <Check size={20} class="flex-shrink-0 mt-1" />
-            <div>
-              <p class="text-[14px] lg:text-[20px] font-semibold">
-                BÔNUS #4: Certificado de conclusão
-              </p>
-              <p class="text-[12px] lg:text-[16px] font-regular mt-1">
-                (Valor: R$ 97)
+              <p class="text-[14px] lg:text-[20px] font-regular">
+                Bônus 3 — Certificado de conclusão <span class="font-semibold">R$ 197</span> por <span class="font-semibold">R$ 0,00</span>
               </p>
             </div>
           </div>
@@ -215,10 +205,17 @@ const button = buttonConfig[variant];
         <!-- Valor total dos bônus -->
         <div class="text-center lg:text-left">
           <p class="text-[16px] lg:text-[24px] font-regular">
-            VALOR TOTAL DOS BÔNUS:
+            Valor total dos bônus: <span class="font-semibold">R$ 5.391,00</span>
           </p>
-          <p class="text-[28px] lg:text-[40px] font-semibold mt-2">
-            R$ 1.088
+        </div>
+        
+        <!-- Espaço 16px -->
+        <div class="mt-4"></div>
+        
+        <!-- Mensagem final -->
+        <div class="text-center lg:text-left">
+          <p class="text-[16px] lg:text-[20px] font-regular italic">
+            "Ou seja, os bônus já pagam o curso sozinho!"
           </p>
         </div>
         
