@@ -11,12 +11,12 @@ const { variant = "hotmart" }: { variant?: Variant } = Astro.props;
 // Define o link e texto do botão baseado na variant
 const buttonConfig: Record<Variant, { link: string; text: string }> = {
   hotmart: {
-    link: "linkhotmart",
-    text: "Acesse o Curso"
+    link: "https://pay.hotmart.com/T102535950F",
+    text: "GARANTIR MEU ACESSO AGORA"
   },
   whatsapp: {
-    link: "nmrwpp",
-    text: "Falar no WhatsApp"
+    link: "https://api.whatsapp.com/send?phone=5545991419164&text=Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20do%20Curso%20regularizador%20de%20im%C3%B3veis",
+    text: "ENTRAR AGORA"
   }
 };
 
@@ -48,19 +48,23 @@ const button = buttonConfig[variant];
         <!-- Espaço 16px -->
         <div class="mt-4"></div>
         
-        <!-- Preço e Garantia -->
-        <div class="flex items-center justify-center lg:justify-start gap-4">
-          <p class="text-[24px] lg:text-[32px] font-semibold">
-            R$ 997,00
-          </p>
-          <div class="flex flex-col text-left">
-            <span class="text-[12px] lg:text-[16px] font-regular uppercase">Garantia Incondicional</span>
-            <span class="text-[12px] lg:text-[16px] font-semibold uppercase">de 7 Dias</span>
-          </div>
-        </div>
-        
-        <!-- Espaço 32px -->
-        <div class="mt-8"></div>
+        {variant === "hotmart" && (
+          <>
+            <!-- Preço e Garantia -->
+            <div class="flex items-center justify-center lg:justify-start gap-4">
+              <p class="text-[24px] lg:text-[32px] font-semibold">
+                R$ 997,00
+              </p>
+              <div class="flex flex-col text-left">
+                <span class="text-[12px] lg:text-[16px] font-regular uppercase">Garantia Incondicional</span>
+                <span class="text-[12px] lg:text-[16px] font-semibold uppercase">de 7 Dias</span>
+              </div>
+            </div>
+            
+            <!-- Espaço 32px -->
+            <div class="mt-8"></div>
+          </>
+        )}
         
         <!-- Botão - AGORA COM LINK DINÂMICO -->
         <a 
