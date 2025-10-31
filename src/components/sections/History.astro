@@ -1,6 +1,26 @@
 ---
 import Card from "../ui/Card.astro";
 import Section from "./Section.astro";
+
+// Define o tipo da variant
+type Variant = "hotmart" | "whatsapp";
+
+// Recebe a prop variant com tipo específico
+const { variant = "hotmart" }: { variant?: Variant } = Astro.props;
+
+// Define o link e texto do botão baseado na variant
+const buttonConfig: Record<Variant, { link: string; text: string }> = {
+  hotmart: {
+    link: "linkhotmart",
+    text: "QUERO TER ACESSO AGORA"
+  },
+  whatsapp: {
+    link: "nmrwpp",
+    text: "FALAR NO WHATSAPP AGORA"
+  }
+};
+
+const button = buttonConfig[variant];
 ---
 
 <Section>
@@ -51,9 +71,16 @@ import Section from "./Section.astro";
         </p>
       </div>
 
-      <!-- CTA -->
+      <!-- CTA - AGORA COM LINK DINÂMICO -->
       <div class="flex justify-center md:justify-start mt-4">
-        <button class="btn-primary">QUERO TER ACESSO AGORA</button>
+        <a 
+          href={button.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary"
+        >
+          {button.text}
+        </a>
       </div>
     </div>
   </Card>

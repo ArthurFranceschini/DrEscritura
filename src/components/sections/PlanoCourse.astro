@@ -1,6 +1,26 @@
 ---
 import Section from "./Section.astro";
 import { Check, Gift } from "lucide-astro";
+
+// Define o tipo da variant
+type Variant = "hotmart" | "whatsapp";
+
+// Recebe a prop variant com tipo específico
+const { variant = "hotmart" }: { variant?: Variant } = Astro.props;
+
+// Define o link e texto do botão baseado na variant
+const buttonConfig: Record<Variant, { link: string; text: string }> = {
+  hotmart: {
+    link: "linkhotmart",
+    text: "Acesse o Curso"
+  },
+  whatsapp: {
+    link: "nmrwpp",
+    text: "Falar no WhatsApp"
+  }
+};
+
+const button = buttonConfig[variant];
 ---
 
 <Section id="PlanoCourse" class="px-5 py-12 md:py-16 lg:py-20">
@@ -42,9 +62,14 @@ import { Check, Gift } from "lucide-astro";
         <!-- Espaço 32px -->
         <div class="mt-8"></div>
         
-        <!-- Botão -->
-        <a href="#" class="block text-[16px] lg:text-[24px] font-regular bg-white text-black px-8 py-4 lg:px-10 lg:py-5 rounded-lg hover:bg-dark hover:text-white transition-all duration-200 text-center w-full lg:w-auto">
-          Acesse o Curso
+        <!-- Botão - AGORA COM LINK DINÂMICO -->
+        <a 
+          href={button.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block text-[16px] lg:text-[24px] font-regular bg-white text-black px-8 py-4 lg:px-10 lg:py-5 rounded-lg hover:bg-dark hover:text-white transition-all duration-200 text-center w-full lg:w-auto"
+        >
+          {button.text}
         </a>
         
         <!-- Espaço 32px -->
