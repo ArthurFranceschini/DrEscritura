@@ -1,0 +1,181 @@
+---
+import Section from "./Section.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
+import BeneficiosEbookBackground from "@/assets/company/BeneficiosEbookBackground.svg";
+---
+
+<Section id="InfoEbook">
+    <div class="background-wrapper">
+        <BeneficiosEbookBackground/>
+    </div>
+    
+    <div class="info-container">
+        <div class="left-content">
+            <h1>O que eu te mostro nesse e-book sem enrolação </h1>
+            <button class="cta-button">Quero aprender o passo-a-passo</button>
+        </div>
+
+        <div class="right-content">
+            <div class="icon-item">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="16" cy="16" r="16" fill="#6CBE50"/>
+                </svg>
+                <p>Os 4 pilares da regularização (e por que 70% dos processos travam).</p>
+            </div>
+            <div class="icon-item">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="16" cy="16" r="16" fill="#6CBE50"/>
+                </svg>
+                <p>Quais documentos pedir e onde encontrar.</p>
+            </div>
+            <div class="icon-item">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="16" cy="16" r="16" fill="#6CBE50"/>
+                </svg>
+                <p>Como funciona a regularização urbana e rural na prática.</p>
+            </div>
+            <div class="icon-item">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="16" cy="16" r="16" fill="#6CBE50"/>
+                </svg>
+                <p>Erros que custam caro (e como evitar).</p>
+            </div>
+            <div class="icon-item">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="16" cy="16" r="16" fill="#6CBE50"/>
+                </svg>
+                <p>Como transformar esse conhecimento em RENDA REAL.</p>
+            </div>
+        </div>
+    </div>
+</Section>
+
+<style>
+    #InfoEbook {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .background-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100%;
+        z-index: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+    }
+
+    .background-wrapper :global(svg) {
+        height: 100%;
+        width: auto;
+        min-width: 100vw;
+    }
+
+    .info-container {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .left-content {
+        width: 100%;
+    }
+
+    h1 {
+        color: var(--dark);
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+    }
+
+    .left-content p {
+        color: var(--dark);
+        line-height: 1.6;
+        margin-bottom: 2rem;
+    }
+
+    .cta-button {
+        background: linear-gradient(135deg, #6CBE50 0%, #5AAE40 100%);
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(108, 190, 80, 0.3);
+    }
+
+    .right-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        width: 100%;
+    }
+
+    .icon-item {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .icon-item svg {
+        flex-shrink: 0;
+        margin-top: 0.25rem;
+    }
+
+    .icon-item p {
+        color: var(--dark);
+        line-height: 1.6;
+        text-align: left;
+    }
+
+    /* Desktop */
+    @media (min-width: 768px) {
+        .background-wrapper {
+            width: 55%;
+            justify-content: flex-start;
+            transform: translateX(-25%);
+        }
+
+        .background-wrapper :global(svg) {
+            min-width: 100%;
+        }
+
+        .info-container {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 4rem;
+            text-align: left;
+        }
+
+        .left-content {
+            flex: 0 0 50%;
+            max-width: 600px;
+        }
+
+        .right-content {
+            flex: 0 0 45%;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .icon-item {
+            align-items: flex-start;
+        }
+    }
+</style>

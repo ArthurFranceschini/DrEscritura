@@ -7,3 +7,10 @@ const { id, class: className } = Astro.props;
     <slot />
   </div>
 </section>
+
+<style>
+    section {
+        position: relative;
+        z-index: 1;
+    }
+</style>

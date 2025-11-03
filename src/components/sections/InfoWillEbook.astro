@@ -1,0 +1,110 @@
+---
+import Section from "./Section.astro";
+import { Image } from "astro:assets";
+import willImg from "../../assets/pics/proposal-pic.png";
+---
+
+<Section id="SobreAutor">
+    <div class="autor-container">
+        <div class="image-wrapper">
+            <Image
+                src={willImg}
+                alt="Will Bispo - Especialista em Regularização de Imóveis"
+                class="autor-image"
+            />
+        </div>
+
+        <div class="text-content">
+            <h1>
+                <span class="highlight">Prazer, sou o Will Bispo.</span>
+            </h1>
+            <p>
+                Sou fundador da Dr Escritura e já participei da regularização de milhares de imóveis em todo o Brasil.
+            </p>
+            <p>
+                Depois de tantos casos, percebi que o que falta pras pessoas não é vontade — é entendimento.
+            </p>
+            <p>
+                Meu objetivo com este e-book é simples: te ensinar o que ninguém nunca explicou, de um jeito que qualquer pessoa entende.
+            </p>
+        </div>
+    </div>
+</Section>
+
+<style>
+    .autor-container {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .image-wrapper {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .autor-image {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        border-radius: 45px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        border: 4px solid rgba(108, 190, 80, 0.2);
+    }
+
+    .text-content {
+        width: 100%;
+    }
+
+    h1 {
+        color: var(--dark);
+        line-height: 1.3;
+        margin-bottom: 1.5rem;
+    }
+
+    .highlight {
+        color: #6CBE50;
+        font-weight: 700;
+    }
+
+    p {
+        color: var(--dark);
+        line-height: 1.8;
+        margin-bottom: 1.25rem;
+        font-size: 1.125rem;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Desktop */
+    @media (min-width: 768px) {
+        .autor-container {
+            flex-direction: row;
+            gap: 5rem;
+            align-items: center;
+            text-align: left;
+        }
+
+        .image-wrapper {
+            flex: 0 0 40%;
+            max-width: 450px;
+        }
+
+        .text-content {
+            flex: 1;
+        }
+
+        h1 {
+            margin-bottom: 2rem;
+        }
+
+        p {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+</style>

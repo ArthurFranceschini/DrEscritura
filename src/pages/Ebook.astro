@@ -1,0 +1,18 @@
+---
+import InfoEbook from "@/components/sections/InfoEbook.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import HeroEbook from "@/components/sections/HeroEbook.astro";
+import InfoWillEbook from "@/components/sections/InfoWillEbook.astro";
+import EbookPrice from '@/components/sections/Ebookprice.astro'
+
+---
+
+<MainLayout
+  hideNavbar={true}
+  title="Ebook Regularizador de Imóveis"
+  description="Código da Regularização">
+  <HeroEbook/>
+  <InfoEbook/>
+  <InfoWillEbook/>
+  <EbookPrice/>
+</MainLayout>

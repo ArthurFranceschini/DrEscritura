@@ -1,0 +1,202 @@
+---
+import Section from "./Section.astro";
+import { Image } from "astro:assets";
+import ebookAbertoImg from "@/assets/company/Ebookabertomockup.png";
+---
+
+<Section id="PrecoEbook">
+    <div class="preco-container">
+        <div class="price-card">
+            <h2 class="title">O que vem junto com o Código da Regularização:</h2>
+            
+            <div class="image-wrapper">
+                <Image
+                    src={ebookAbertoImg}
+                    alt="E-book Código da Regularização"
+                    class="ebook-image"
+                />
+            </div>
+
+            <ul class="benefits-list">
+                <li>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="12" fill="#6CBE50"/>
+                        <path d="M7 12L10.5 15.5L17 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>E-book completo (10 capítulos práticos)</span>
+                </li>
+                <li>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="12" fill="#6CBE50"/>
+                        <path d="M7 12L10.5 15.5L17 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Checklists e modelos prontos pra usar</span>
+                </li>
+                <li>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="12" fill="#6CBE50"/>
+                        <path d="M7 12L10.5 15.5L17 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Calculadora de valorização</span>
+                </li>
+                <li>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="12" fill="#6CBE50"/>
+                        <path d="M7 12L10.5 15.5L17 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Fluxograma visual pra entender o processo</span>
+                </li>
+                <li>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="12" fill="#6CBE50"/>
+                        <path d="M7 12L10.5 15.5L17 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Bônus exclusivos e acesso vitalício</span>
+                </li>
+            </ul>
+
+            <div class="price-section">
+                <p class="price-label">Tudo isso por apenas</p>
+                <p class="price">R$ 47</p>
+            </div>
+        </div>
+
+        <button class="cta-button">Garantir meu e-book</button>
+    </div>
+</Section>
+
+<style>
+    .preco-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        align-items: center;
+        width: 100%;
+    }
+
+    .price-card {
+        background: white;
+        border-radius: 24px;
+        padding: 2.5rem 2rem;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        border: 2px solid #6CBE50;
+        max-width: 700px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .title {
+        text-align: center;
+        color: var(--dark);
+        line-height: 1.3;
+        margin: 0;
+    }
+
+    .image-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 1rem 0;
+    }
+
+    .ebook-image {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .benefits-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .benefits-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .benefits-list svg {
+        flex-shrink: 0;
+        margin-top: 0.125rem;
+    }
+
+    .benefits-list span {
+        color: var(--dark);
+        line-height: 1.6;
+        font-size: 1rem;
+    }
+
+    .price-section {
+        border-top: 2px solid #f0f0f0;
+        padding-top: 2rem;
+        text-align: center;
+    }
+
+    .price-label {
+        color: var(--dark);
+        font-size: 1.125rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .price {
+        color: #6CBE50;
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 1;
+        margin: 0;
+    }
+
+    .cta-button {
+        background: linear-gradient(135deg, #6CBE50 0%, #5AAE40 100%);
+        color: white;
+        border: none;
+        padding: 1.25rem 2rem;
+        border-radius: 12px;
+        font-size: 1.25rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+        box-shadow: 0 4px 20px rgba(108, 190, 80, 0.3);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        width: 100%;
+        max-width: 700px;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 30px rgba(108, 190, 80, 0.4);
+    }
+
+    /* Desktop */
+    @media (min-width: 768px) {
+        .price-card {
+            padding: 3rem 3.5rem;
+            max-width: 800px;
+        }
+
+        .ebook-image {
+            max-width: 650px;
+        }
+
+        .benefits-list span {
+            font-size: 1.125rem;
+        }
+
+        .price {
+            font-size: 3.5rem;
+        }
+
+        .cta-button {
+            max-width: 800px;
+        }
+    }
+</style>
