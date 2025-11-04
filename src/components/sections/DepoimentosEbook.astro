@@ -1,0 +1,143 @@
+---
+import Section from "./Section.astro";
+import { MessageCircle } from "lucide-astro";
+---
+
+<Section id="Depoimentos">
+    <div class="depoimentos-container">
+        <h2 class="title">Quem colocou em prática, ganhou dinheiro.</h2>
+        
+        <div class="depoimentos-grid">
+            <div class="depoimento-card">
+                <div class="quote-icon">
+                    <MessageCircle size={40} color="#6CBE50" />
+                </div>
+                <p class="depoimento-text">
+                    "Segui o passo a passo e consegui ajudar a regularizar propriedades de ente público, faturando mais de R$15 mil mensal."
+                </p>
+                <div class="author">
+                    <p class="author-name">Maria</p>
+                    <p class="author-info">Advogada, BH</p>
+                </div>
+            </div>
+
+            <div class="depoimento-card">
+                <div class="quote-icon">
+                    <MessageCircle size={40} color="#6CBE50" />
+                </div>
+                <p class="depoimento-text">
+                    "Antes eu perdia vendas por imóveis travados. Agora faturo R$ 25 mil a mais por mês."
+                </p>
+                <div class="author">
+                    <p class="author-name">Carlos</p>
+                    <p class="author-info">Corretor de imóveis, SP</p>
+                </div>
+            </div>
+
+            <div class="depoimento-card">
+                <div class="quote-icon">
+                    <MessageCircle size={40} color="#6CBE50" />
+                </div>
+                <p class="depoimento-text">
+                    "Fechei meu primeiro projeto por R$9 mil. Obrigado Will!"
+                </p>
+                <div class="author">
+                    <p class="author-name">João</p>
+                    <p class="author-info">Corretor de imóveis, MS</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</Section>
+
+<style>
+    .depoimentos-container {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    .title {
+        text-align: center;
+        color: var(--dark);
+        line-height: 1.3;
+        margin: 0;
+        max-width: 800px;
+    }
+
+    .depoimentos-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        width: 100%;
+    }
+
+    .depoimento-card {
+        background: white;
+        border-radius: 20px;
+        padding: 2rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border: 1px solid #e0e0e0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .depoimento-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .quote-icon {
+        display: flex;
+        align-items: center;
+    }
+
+    .depoimento-text {
+        color: var(--dark);
+        line-height: 1.7;
+        font-size: 1.125rem;
+        font-style: italic;
+        margin: 0;
+    }
+
+    .author {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        border-top: 2px solid #f0f0f0;
+        padding-top: 1rem;
+    }
+
+    .author-name {
+        color: var(--dark);
+        font-weight: 700;
+        font-size: 1.125rem;
+        margin: 0;
+    }
+
+    .author-info {
+        color: #666;
+        font-size: 0.95rem;
+        margin: 0;
+    }
+
+    /* Desktop */
+    @media (min-width: 768px) {
+        .depoimentos-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .depoimento-card {
+            padding: 2.5rem;
+        }
+
+        .depoimento-text {
+            font-size: 1.125rem;
+            min-height: 120px;
+        }
+    }
+</style>

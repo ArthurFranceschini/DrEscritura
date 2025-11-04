@@ -1,0 +1,127 @@
+---
+import Section from "./Section.astro";
+---
+
+<Section id="CtaFinal">
+    <div class="cta-container">
+        <h2 class="title">Você pode continuar travado... ou agir agora.</h2>
+        
+        <div class="text-content">
+            <p>
+                Eu já vi de perto o prejuízo que a falta de regularização causa.
+            </p>
+            <p>
+                E também vi o alívio de quem resolve.
+            </p>
+            <p>
+                Com o Código da Regularização, você vai entender o processo, aplicar o método e mudar o destino do seu patrimônio — ou até começar um novo negócio.
+            </p>
+        </div>
+
+        <div class="garantia">
+            <p class="garantia-text">Risco zero. Garantia total de 7 dias.</p>
+        </div>
+
+        <button class="cta-button">Quero começar agora</button>
+    </div>
+</Section>
+
+<style>
+    .cta-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .title {
+        color: var(--dark);
+        line-height: 1.3;
+        margin: 0;
+        font-weight: 700;
+    }
+
+    .text-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        max-width: 750px;
+    }
+
+    p {
+        color: var(--dark);
+        line-height: 1.8;
+        font-size: 1.125rem;
+        margin: 0;
+    }
+
+    .garantia {
+        background: linear-gradient(135deg, #6CBE50 0%, #5AAE40 100%);
+        padding: 1.25rem 2rem;
+        border-radius: 12px;
+        margin-top: 1rem;
+    }
+
+    .garantia-text {
+        color: white;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin: 0;
+    }
+
+    .cta-button {
+        background: linear-gradient(135deg, #6CBE50 0%, #5AAE40 100%);
+        color: white;
+        border: none;
+        padding: 1.5rem 3.5rem;
+        border-radius: 12px;
+        font-size: 1.375rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+        box-shadow: 0 6px 25px rgba(108, 190, 80, 0.4);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-top: 1rem;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 35px rgba(108, 190, 80, 0.5);
+    }
+
+    /* Desktop */
+    @media (min-width: 768px) {
+        .cta-container {
+            gap: 2.5rem;
+        }
+
+        .title {
+            font-size: 2.75rem;
+        }
+
+        .text-content {
+            gap: 1.5rem;
+        }
+
+        p {
+            font-size: 1.375rem;
+        }
+
+        .garantia {
+            padding: 1.5rem 3rem;
+        }
+
+        .garantia-text {
+            font-size: 1.5rem;
+        }
+
+        .cta-button {
+            font-size: 1.5rem;
+            padding: 1.75rem 4rem;
+        }
+    }
+</style>

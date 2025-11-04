@@ -1,0 +1,129 @@
+---
+import Section from "./Section.astro";
+import ProblemaBackground from "@/assets/company/ProblemaBackground.svg";
+---
+
+<Section id="ProblemaEbook">
+    <div class="background-wrapper">
+        <ProblemaBackground/>
+        <div class="overlay"></div>
+    </div>
+
+    <div class="content-wrapper">
+        <h2 class="title">Você sabia que mais da metade dos imóveis no Brasil estão irregulares?</h2>
+        
+        <div class="text-content">
+            <p>
+                Muita gente não consegue vender, financiar ou até deixar o imóvel pros filhos porque falta documentação.
+            </p>
+            <p>
+                Eu vi famílias perderem dinheiro, tempo e oportunidades por não saber o caminho.
+            </p>
+            <p>
+                Por isso criei esse e-book: pra mostrar como você pode ganhar dinheiro resolvendo isso de forma simples e sem juridiquês.
+            </p>
+        </div>
+    </div>
+</Section>
+
+<style>
+    #ProblemaEbook {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .background-wrapper {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100vw;
+        height: 100%;
+        z-index: 0;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .background-wrapper :global(svg) {
+        width: auto;
+        height: auto;
+        min-width: 100vw;
+        min-height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1;
+    }
+
+    .content-wrapper {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+        text-align: center;
+        padding: 3rem 1rem;
+        justify-content: center;
+    }
+
+    .title {
+        color: white;
+        line-height: 1.3;
+        margin: 0;
+        max-width: 100%;
+        font-weight: 700;
+        font-size: 1.75rem;
+    }
+
+    .text-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        max-width: 100%;
+    }
+
+    p {
+        color: white;
+        line-height: 1.7;
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    /* Desktop */
+    @media (min-width: 768px) {
+        .overlay {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .content-wrapper {
+            padding: 5rem 0;
+            gap: 2.5rem;
+        }
+
+        .title {
+            max-width: 900px;
+            font-size: 2.5rem;
+        }
+
+        .text-content {
+            max-width: 800px;
+            gap: 1.5rem;
+        }
+
+        p {
+            font-size: 1.375rem;
+            line-height: 1.8;
+        }
+    }
+</style>
