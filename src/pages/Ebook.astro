@@ -6,7 +6,6 @@ import InfoWillEbook from "@/components/sections/InfoWillEbook.astro";
 import EbookPrice from '@/components/sections/Ebookprice.astro';
 import DykEbook from'@/components/sections/DykEbook.astro';
 import finalEbook from '@/components/sections/finalEbook.astro';
-
 ---
 
 <MainLayout
@@ -18,4 +17,20 @@ import finalEbook from '@/components/sections/finalEbook.astro';
   <InfoWillEbook/>
   <EbookPrice/>
   <DykEbook/>
+  
+  <!-- Respiro branco -->
+  <div class="respiro"></div>
 </MainLayout>
+
+<style>
+  .respiro {
+    height: 80px; /* Ajuste conforme necessário */
+    background: white;
+  }
+  
+  @media (max-width: 768px) {
+    .respiro {
+      height: 40px; /* Menor no mobile */
+    }
+  }
+</style>
