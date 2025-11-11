@@ -18,9 +18,10 @@ import EbookBackground from "@/assets/company/Ebookbackground.svg";
                 Eu sou o Will, da Dr Escritura.
                 Passei os últimos 17 anos ajudando pessoas a resolver o que parecia impossível: colocar imóveis em dia e gerar valor com isso.
                 Agora, reuni tudo o que aprendi em um único material — prático, direto e que te ensina como transformar essa demanda em renda real.
-
             </p>
-            <a href='https://pay.hotmart.com/J102873886Q'class="cta-button">Quero aprender a regularizar agora</a>
+            <a href='https://pay.hotmart.com/J102873886Q' class="cta-button">
+                Quero aprender a regularizar agora
+            </a>
         </div>
         
         <div class="ebook-mockup">
@@ -30,7 +31,6 @@ import EbookBackground from "@/assets/company/Ebookbackground.svg";
 </Section>
 
 <style>
-    
     .background-wrapper {
         position: absolute;
         top: 0;
@@ -84,16 +84,22 @@ import EbookBackground from "@/assets/company/Ebookbackground.svg";
     }
 
     .cta-button {
+        display: inline-block;
         background: linear-gradient(135deg, #6CBE50 0%, #5AAE40 100%);
         color: white;
         border: none;
-        padding: 1rem 2rem;
+        padding: 1rem 1.5rem;
         border-radius: 8px;
-        font-size: 1.125rem;
+        font-size: 1rem;
         font-weight: 600;
         cursor: pointer;
         transition: transform 0.2s, box-shadow 0.2s;
         box-shadow: 0 4px 12px rgba(108, 190, 80, 0.2);
+        text-decoration: none;
+        text-align: center;
+        line-height: 1.4;
+        width: 100%;
+        max-width: 100%;
     }
 
     .cta-button:hover {
@@ -123,6 +129,12 @@ import EbookBackground from "@/assets/company/Ebookbackground.svg";
 
         h1 {
             margin-bottom: 32px;
+        }
+
+        .cta-button {
+            width: auto;
+            font-size: 1.125rem;
+            padding: 1rem 2rem;
         }
 
         .ebook-mockup {

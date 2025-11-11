@@ -35,24 +35,21 @@ import ProblemaBackground from "@/assets/company/ProblemaBackground.svg";
     .background-wrapper {
         position: absolute;
         top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100vw;
+        left: 0;
+        width: 100%;
         height: 100%;
         z-index: 0;
         pointer-events: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 
     .background-wrapper :global(svg) {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 100%;
         width: auto;
-        height: auto;
-        min-width: 100vw;
         min-height: 100%;
-        object-fit: cover;
-        object-position: center;
     }
 
     .overlay {
