@@ -9,6 +9,7 @@ const { hideNavbar = false, ...props } = Astro.props;
 
 <html lang="pt-br">
   <MainHead {...props} />
+  <slot name="head" />  <!-- ADICIONE ESTA LINHA -->
   <style>
     html.lenis {
       height: auto;
